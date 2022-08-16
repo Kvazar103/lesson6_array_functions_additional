@@ -111,9 +111,23 @@ arrayNumbersFromZeroToTwenty=arrayNumbersFromZeroToTwenty.filter(function (el){
 console.log(arrayNumbersFromZeroToTwenty)
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
 console.log("- Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.")
-let word='Hello'
+// let word='Hello'
+// let capitalize=(str)=>{
+//     return str.toUpperCase()
+// }
+// console.log(capitalize(word));
+let word='hello my name is gustavo'
 let capitalize=(str)=>{
-    return str.toUpperCase()
+    let array=str.split(" ")
+        for(let i=0;i<array.length;i++){
+           let x= array[i].slice(1,array[i].length+1)
+               array[i]=array[i][0].toUpperCase()+x
+        }
+        let newWord=' '
+        for(let i=0;i<array.length;i++){
+            newWord+=' '+array[i]
+        }
+    return newWord
 }
 console.log(capitalize(word));
 // - Створити функцію-валідатор для адрес електронної пошти. 
@@ -312,7 +326,7 @@ let books=[
     },
 ]
 console.log("-знайти наібльшу книжку.")
-     function BiggerBook(array){
+     function biggerBook(array){
              let theBiggestBook=0;
                 for(let book of books){
                    if(theBiggestBook<book.pages){
@@ -321,7 +335,7 @@ console.log("-знайти наібльшу книжку.")
                 }
                     return theBiggestBook
            }
-console.log(BiggerBook(books)); 
+console.log(biggerBook(books));
 console.log("знайти книжку/ки з найбільшою кількістю жанрів")
 
 function theMostGenreBooks(array) {
